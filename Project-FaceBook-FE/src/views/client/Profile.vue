@@ -877,8 +877,6 @@ export default {
           this.$toast.success("Update information success", {
             position: "top-right"
           })
-          console.log(res.data);
-          
           this.getProfile()
         })
         .catch((error) => {
@@ -1031,7 +1029,6 @@ export default {
           this.contentComment = ""
           await Promise.all([this.getCommentDetailPost(), this.getDataNewFeed()])
         } catch (errors) {
-          console.log(errors)
         }
       }
     },
@@ -1055,7 +1052,6 @@ export default {
         friend_user_id: this.inforUser._id
       }
       apiFriend.sendFriendRequest(body).then((res) => {
-        console.log(res.data)
         this.checkStatusFriend()
       })
     },

@@ -123,7 +123,6 @@ export default {
         comfirmpassword: this.new_confirmPassword
       }
       apiAuth.changePassword(body).then((res) => {
-        console.log(res)
         this.isChangePassWord = true
         this.$toast.success(res.data.message, {
           position: "top-right"

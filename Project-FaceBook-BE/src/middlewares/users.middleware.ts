@@ -557,7 +557,7 @@ export const updateMeValidator = validate(
         isLength: {
           options: {
             min: 1,
-            max: 50
+            max: 800
           },
           errorMessage: USERMESSAGE.AVATAR_LENGTH
         }

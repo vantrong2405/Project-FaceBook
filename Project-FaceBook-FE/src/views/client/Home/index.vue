@@ -1,17 +1,17 @@
-<template>
+<template >
   <div>
     <input type="file" hidden name="file" ref="fileInput" id="file" @change="handleFileUpload" />
-  <div class="min-h-screen w-full bg-[#F0F2F5]">
+  <div class="min-h-screen w-full bg-[#F0F2F5] dark:text-white dark:bg-black">
     <div class="flex">
       <left-bar-home :userCurrent="userCurrent" :avatar="avatar" />
       <div class="mx-44 mt-7 w-full md:mx-28">
         <div class="">
-          <div class="flex flex-col gap-4 rounded-lg border-[1px] bg-[white] p-2 shadow-sm">
+          <div class="flex flex-col gap-4 rounded-lg border-[1px]  p-2 shadow-sm">
             <div id="storie" class="rounded-lg">
               <div
-                class="h-18 flex w-full cursor-pointer items-center gap-3 rounded-lg px-2 py-1 transition-colors duration-300 hover:bg-myGray-900"
+                class="h-18 flex w-full cursor-pointer items-center gap-3 rounded-lg px-2 py-1 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
               >
-                <div id="post-svg-plus" class="cursor-pointer rounded-full bg-face-blue-light p-2.5">
+                <div id="post-svg-plus" class="cursor-pointer rounded-full bg-face-blue-light p-2.5 dark:text-white dark:bg-black">
                   <svg-create class="w-5 text-face-blue" />
                 </div>
                 <div id="title" class="flex flex-col">
@@ -41,19 +41,19 @@
               <hr class="mx-2" />
               <div id="new-post-bottom" class="flex items-center justify-around px-2">
                 <div
-                  class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-lg transition-colors duration-300 hover:bg-myGray-900"
+                  class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-lg transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                 >
                   <svg-live-video class="w-6 text-red-500" />
                   <span>Live Video</span>
                 </div>
                 <div
-                  class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-lg transition-colors duration-300 hover:bg-myGray-900"
+                  class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-lg transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                 >
                   <svg-photo class="w-6 text-green-500" />
                   <span>Photo/video</span>
                 </div>
                 <div
-                  class="hidden h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-lg transition-colors duration-300 hover:bg-myGray-900 mobile-x:flex"
+                  class="hidden h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-lg transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600 mobile-x:flex"
                 >
                   <svg-smile class="w-6 text-yellow-400" />
                   <span>Feeling/activity</span>
@@ -62,7 +62,7 @@
             </div>
           </div>
           <ul v-for="(value, index) in allNewFeed" :key="index">
-            <li class="my-4 w-full rounded-lg border-[1px] bg-[white] py-2 shadow-sm transition-colors duration-300">
+            <li class="my-4 w-full rounded-lg border-[1px] bg-[white] py-2 shadow-sm transition-colors duration-300 dark:text-white dark:bg-black">
               <div id="post-top" class="flex w-full items-center justify-between p-4 py-2">
                 <div id="post-top_left" class="flex items-center gap-2">
                   <router-link :to="`${pathConstant.profile}/${value.user.username}`">
@@ -118,7 +118,7 @@
                   class="my-2 flex items-center border-b border-t border-myGray-900 text-sm font-normal sm:text-tiny"
                 >
                   <div
-                    class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900"
+                    class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                     :class="{ 'text-[#0861f2]': value.user_liked.liked }"
                     @click="changeStatusLikePost(value, index)"
                   >
@@ -126,7 +126,7 @@
                     <span>Like</span>
                   </div>
                   <div
-                    class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900"
+                    class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                     data-bs-toggle="modal"
                     data-bs-target="#modalComment"
                     @click="
@@ -140,7 +140,7 @@
                   <div
                     data-bs-toggle="modal"
                     data-bs-target="#share_posts"
-                    class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900"
+                    class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                   >
                     <Forward class="w-5" />
                     <span>Share</span>
@@ -156,14 +156,14 @@
               aria-hidden="true"
             >
               <div class="modal-dialog modal-dialog-scrollable modal-lg">
-                <div class="modal-content">
+                <div class="modal-content dark:text-white dark:bg-black">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5 text-2xl font-bold" id="modalCommentLabel">
+                    <h1 class="modal-title fs-5 text-2xl font-bold " id="modalCommentLabel">
                       Bài viết của {{ valueDetailPost?.user?.name ?? "" }}
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body pb-0">
+                  <div class="modal-body pb-0 dark:text-white dark:bg-black">
                     <li>
                       <div id="post-top" class="flex w-full items-center justify-between p-4 py-2">
                         <div id="post-top_left" class="flex items-center gap-2">
@@ -217,7 +217,7 @@
                           class="my-2 flex items-center border-b border-t border-myGray-900 text-sm font-normal sm:text-tiny"
                         >
                           <div
-                            class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900"
+                            class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                             :class="{ 'text-[#0861f2]': value.user_liked.liked }"
                             @click="changeStatusLikePost(value, index)"
                           >
@@ -225,7 +225,7 @@
                             <span>Like</span>
                           </div>
                           <div
-                            class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900"
+                            class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                           >
                             <svg-comment class="w-5" />
                             <span>Comment</span>
@@ -233,7 +233,7 @@
                           <div
                             data-bs-toggle="modal"
                             data-bs-target="#share_posts"
-                            class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900"
+                            class="my-1 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                           >
                             <Forward class="w-5" />
                             <span>Share</span>
@@ -253,12 +253,12 @@
                                 alt=""
                               />
                             </div>
-                            <div id="other_comment" class="max-w-[80%] rounded-lg pb-2">
-                              <div class="rounded-2xl bg-slate-100 px-3 py-2">
+                            <div id="other_comment" class="max-w-[80%] rounded-lg pb-2 dark:!text-white dark:!bg-gray-600 dark:hover:opacity-80">
+                              <div class="rounded-2xl bg-slate-100 px-3 py-2 dark:!text-white dark:!bg-gray-600 dark:hover:opacity-80">
                                 <div id="commnet-name" class="cursor-pointer text-xs font-bold hover:underline">
                                   {{ commentDetail.user[0].name }}
                                 </div>
-                                <div class="max-w-full break-words" id="comment-title">
+                                <div class="max-w-full break-words " id="comment-title">
                                   {{ commentDetail.content }}
                                 </div>
                               </div>
@@ -293,11 +293,11 @@
                       <div class="flex w-full flex-col">
                         <div
                           id="me_comment"
-                          class="flex w-full rounded-2xl bg-slate-100 outline-none ring-transparent focus:outline-none"
+                          class="flex w-full rounded-2xl bg-slate-100 outline-none ring-transparent focus:outline-none dark:!text-white dark:!bg-gray-600 dark:hover:opacity-80"
                         >
                           <!-- input Comment -->
                           <input
-                            class="w-full rounded-2xl border-0 bg-transparent px-3 outline-none focus:border-black focus:outline-none focus:ring-transparent"
+                            class=" w-full rounded-2xl border-0 bg-transparent px-3 outline-none focus:border-black focus:outline-none focus:ring-transparent"
                             type="text"
                             placeholder="Viết câu trả lời..."
                             v-model="contentComment"
@@ -308,17 +308,17 @@
                               <svg-smile class="w-4 text-myGray-600" />
                             </div>
                             <div
-                              class="cursor-pointer rounded-full p-2 transition-colors duration-300 hover:bg-myGray-900"
+                              class="cursor-pointer rounded-full p-2 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                             >
                               <svg-live-video class="w-4 text-myGray-600" />
                             </div>
                             <div
-                              class="cursor-pointer rounded-full p-2 transition-colors duration-300 hover:bg-myGray-900"
+                              class="cursor-pointer rounded-full p-2 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                             >
                               <svg-menu class="w-4 text-myGray-600" />
                             </div>
                             <div
-                              class="cursor-pointer rounded-full p-2 transition-colors duration-300 hover:bg-myGray-900"
+                              class="cursor-pointer rounded-full p-2 transition-colors duration-300 hover:bg-myGray-900 dark:hover:bg-slate-600"
                             >
                               <svg-photo class="w-4 text-myGray-600" />
                             </div>
@@ -552,7 +552,6 @@ export default {
           this.contentComment = ""
           await Promise.all([this.getCommentDetailPost(), this.getDataNewFeed()])
         } catch (errors) {
-          console.log(errors)
         }
       }
     },

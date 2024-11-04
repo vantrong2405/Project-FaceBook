@@ -113,20 +113,47 @@
 }
 
 @media (forced-colors: active) {
-  /* Các kiểu dáng cho chế độ màu bắt buộc */
   body {
     color: WindowText;
-    /* Ví dụ về màu bắt buộc */
     background-color: Window;
-    /* Ví dụ về màu bắt buộc */
   }
 
   .button {
     border: 1px solid Highlight;
-    /* Ví dụ về màu bắt buộc */
     background-color: Highlight;
-    /* Ví dụ về màu bắt buộc */
     color: HighlightText;
-    /* Ví dụ về màu bắt buộc */
   }
+}
+
+
+
+/* Light Mode */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --secondary-bg-color: #f0f0f0;
+  --secondary-text-color: #333333;
+}
+
+/* Dark Mode */
+html.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --secondary-bg-color: #1a1a1a;
+  --secondary-text-color: #b3b3b3;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container, .header, .footer {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.card {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
 }

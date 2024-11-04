@@ -21,16 +21,10 @@ export default async function (to, from, next) {
         setProfileToLS(res.data.result)
         next()
       } else {
-        toast.warning("Thông báo<br>Bạn cần đăng nhập hệ thống trước!", {
-          position: "top-right"
-        })
         next("/admin/login")
       }
     })
   } catch (error) {
-    toast.warning("Thông báo<br>Bạn cần đăng nhập hệ thống trước!", {
-      position: "top-right"
-    })
     next("/admin/login")
   }
 }

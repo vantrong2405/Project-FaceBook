@@ -1,12 +1,12 @@
 <template>
- <div>
-  <div class="fixed left-0 top-[55px] flex h-screen w-[22%] flex-col bg-white pl-[5px] pt-[5px] shadow-md">
+ <div class="dark:!bg-black dark:!text-white">
+  <div class="fixed left-0 top-[55px] flex h-screen w-[22%] flex-col bg-white pl-[5px] pt-[5px] shadow-md dark:!bg-black dark:!text-white">
     <div id="left-bar-top" class="p-[10px]">
       <ul>
         <li class="flex items-center justify-between">
           <h1 class="text-2xl font-bold">Video</h1>
           <div
-            class="flex h-[36px] w-[36px] cursor-pointer items-center justify-center rounded-full bg-[#E4E6EB] hover:bg-gray-300"
+            class="flex h-[36px] w-[36px] cursor-pointer items-center justify-center rounded-full bg-[#E4E6EB] hover:bg-gray-300 hover:!text-black dark:text-black"
           >
             <Settings />
           </div>
@@ -18,7 +18,7 @@
               class="flex h-9 cursor-pointer items-center justify-center rounded-full transition-opacity duration-500"
             ></div>
             <div
-              class="ml-1 flex h-full w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gray-100 sm:m-0 xl:flex-1 xl:cursor-text xl:px-4"
+              class="ml-1 flex h-full w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gray-100 sm:m-0 xl:flex-1 xl:cursor-text xl:px-4  dark:text-black"
             >
               <svg-search class="w-5" fill="currentColor" />
               <input
@@ -33,52 +33,52 @@
     <div class="scroll-container flex-1 px-[10px] pb-[22%]">
       <div class="visible">
         <ul>
-          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900">
+          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900 dark:hover:bg-slate-600 dark:hover:text-black dark:text-black">
             <div class="rounded-full bg-[#E4E6EB] p-1">
               <MonitorPlay class="rounded-full" />
             </div>
-            <span class="text-tiny font-semibold">Trang chủ</span>
+            <span class="text-tiny font-semibold dark:text-white">Trang chủ</span>
           </li>
 
-          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900">
+          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900 dark:hover:bg-slate-600 dark:hover:text-black dark:text-black">
             <div class="rounded-full bg-[#E4E6EB] p-1">
               <Tv2 class="rounded-full" />
             </div>
-            <span class="text-tiny font-semibold">Trực tiếp</span>
+            <span class="text-tiny font-semibold dark:text-white">Trực tiếp</span>
           </li>
-          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900">
+          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900 dark:hover:bg-slate-600 dark:hover:text-black dark:text-black">
             <div class="rounded-full bg-[#E4E6EB] p-1">
               <Film class="rounded-full" />
             </div>
-            <span class="text-tiny font-semibold">Reels</span>
+            <span class="text-tiny font-semibold dark:text-white">Reels</span>
           </li>
-          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900">
+          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900 dark:hover:bg-slate-600 dark:hover:text-black dark:text-black">
             <div class="rounded-full bg-[#E4E6EB] p-1">
               <Clapperboard class="rounded-full" />
             </div>
-            <span class="text-tiny font-semibold">Chương trình</span>
+            <span class="text-tiny font-semibold dark:text-white">Chương trình</span>
           </li>
-          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900">
+          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900 dark:hover:bg-slate-600 dark:hover:text-black dark:text-black">
             <div class="rounded-full bg-[#E4E6EB] p-1">
               <Rocket class="rounded-full" />
             </div>
-            <span class="text-tiny font-semibold">Khám phá</span>
+            <span class="text-tiny font-semibold dark:text-white">Khám phá</span>
           </li>
-          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900">
+          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900 dark:hover:bg-slate-600 dark:hover:text-black dark:text-black">
             <div class="rounded-full bg-[#E4E6EB] p-1">
               <Save class="rounded-full" />
             </div>
-            <span class="text-tiny font-semibold">Video đã lưu</span>
+            <span class="text-tiny font-semibold dark:text-white">Video đã lưu</span>
           </li>
         </ul>
       </div>
       <!-- end -->
     </div>
   </div>
-  <div class="float-right w-[calc(100%-22%)] bg-[#F0F2F5]">
-    <div class="h-full w-full">
-      <div class="mx-auto w-[58%]">
-        <div class="mb-3 mt-[15px] flex items-center justify-between rounded-lg border bg-white shadow-md">
+  <div class="float-right w-[calc(100%-22%)] bg-[#F0F2F5] dark:!bg-black dark:!text-white">
+    <div class="h-full w-full dark:!bg-black dark:!text-white">
+      <div class="mx-auto w-[58%] dark:!bg-black dark:!text-white">
+        <div class="mb-3 mt-[15px] flex items-center justify-between rounded-lg border bg-white shadow-md dark:!bg-black dark:!text-white">
           <div class="mt-3 p-3">
             <h1 class="mb-3 text-xl font-bold">Video mới dành cho bạn</h1>
             <div class="mb-3 flex items-center">
@@ -104,8 +104,8 @@
           </div>
           <div></div>
         </div>
-        <div class="my-5 rounded-lg border bg-white shadow-md" v-for="index in 10" :key="index">
-          <div class="m-4 mb-3 flex justify-between">
+        <div class="my-5 rounded-lg border bg-white shadow-md dark:!bg-black dark:!text-white" v-for="index in 10" :key="index">
+          <div class="m-4 mb-3 flex justify-between ">
             <div class="flex">
               <img src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg" class="mr-3 h-12 w-12 rounded-full" alt="" />
               <div>

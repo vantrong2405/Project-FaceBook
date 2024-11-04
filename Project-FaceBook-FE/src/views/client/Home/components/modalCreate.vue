@@ -3,25 +3,25 @@
   <div
     data-bs-toggle="modal"
     data-bs-target="#create_posts"
-    class="flex text-gray-400 items-center h-10 w-full cursor-pointer rounded-full border-[0px] bg-[#F0F2F5] px-3 text-tiny font-normal outline-none transition-colors hover:bg-[#E4E6E9] focus:shadow-none focus:outline-none focus:ring-transparent mobile-x:text-base"
+    class="dark:text-white dark:bg-slate-600 dark:hover:opacity-80 flex text-gray-400 items-center h-10 w-full cursor-pointer rounded-full border-[0px] bg-[#F0F2F5] px-3 text-tiny font-normal outline-none  hover:bg-[#E4E6E9] focus:shadow-none focus:outline-none focus:ring-transparent mobile-x:text-base"
   >{{placeholder}}</div>
   <div class="modal fade" id="create_posts" tabindex="-1" aria-labelledby="create_post" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header ">
           <h3 class="modal-title flex justify-center text-2xl font-bold text-blue-500" id="exampleModalLabel">
             Tạo bài viết
           </h3>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-        <div class="modal-body">
+        <div class="modal-body dark:text-white dark:bg-black">
           <div class="flex w-full">
             <a class="h-[40px] w-[40px] hover:brightness-90" href="">
               <img class="h-full w-full rounded-full" :src="userCurrent.avatar ? userCurrent.avatar : avatar" alt="" />
             </a>
             <div class="ml-[10px]">
-              <p class="text-[15px] font-medium text-black">{{ userCurrent.name }}</p>
+              <p class="text-[15px] font-medium text-black dark:!text-white ">{{ userCurrent.name }}</p>
               <form class="mx-auto w-36">
                 <select
                   id="countries"
@@ -36,7 +36,7 @@
           </div>
           <div class="mt-3 w-full pb-[50px]">
             <textarea
-              class="w-full resize-none break-words border-0 px-0 focus:outline-none focus:ring-0"
+              class="w-full resize-none break-words border-0 px-0 focus:outline-none focus:ring-0 dark:text-white dark:bg-black"
               :placeholder="placeholder"
               rows="3"
               @input="handleContentInput"
@@ -63,8 +63,8 @@
             <i class="fa-regular fa-face-smile cursor-pointer text-[26px] text-gray-500"></i>
           </div>
           <div class="w-full py-[15px]">
-            <div class="border-1 mb-[15px] flex w-full items-center justify-between rounded-lg border-gray-300 p-[8px]">
-              <span class="cursor-pointer font-medium text-black">Thêm vào bài viết của bạn</span>
+            <div class="border-1 mb-[15px] flex w-full items-center justify-between rounded-lg border-gray-300 p-[8px] dark:text-white dark:bg-black">
+              <span class="cursor-pointer font-medium text-black ">Thêm vào bài viết của bạn</span>
               <div class="flex justify-around">
                 <div
                   class="flex h-[36px] w-[36px] items-center justify-center rounded-full hover:bg-[#F2F2F2]"
@@ -113,7 +113,7 @@
             </div>
 
             <button
-              class="w-full rounded-lg bg-[#0861F2] py-[10px] font-medium text-white"
+              class="w-full rounded-lg bg-[#0861F2] py-[10px] font-medium text-white  dark:text-white dark:bg-gray-600 dark:hover:opacity-80"
               data-bs-dismiss="modal"
               aria-label="Close"
               v-on:click="handleAddPost"

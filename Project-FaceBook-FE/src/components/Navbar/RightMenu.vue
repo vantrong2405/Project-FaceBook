@@ -3,7 +3,16 @@
     <div class="flex items-center justify-end gap-1 px-4 sm:gap-2">
       <div
         id="menu-box"
-        class="flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 p-2 text-lg transition-colors duration-300 hover:bg-myGray-700"
+        class=" dark:hover:text-black dark:text-black flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 p-2 text-lg transition-colors duration-300 hover:bg-myGray-700"
+         @click="toggleDarkMode"
+      >
+      <CloudSun class="hidden w-5 lg:block" v-if="!isDarkMode"/>
+        <MoonStar class="hidden w-5 lg:block"  v-if="isDarkMode" />
+        <svg-create class="block w-5 lg:hidden" />
+      </div>
+      <div
+        id="menu-box"
+        class="dark:hover:text-black dark:text-black flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 p-2 text-lg transition-colors duration-300 hover:bg-myGray-700"
         @click="(isShowMenu = !isShowMenu), (isShowMore = false), (isShowMessager = false), (isShowNotice = false)"
       >
         <svg-menu class="hidden w-5 lg:block" />
@@ -12,7 +21,7 @@
 
       <div
         id="messenger-box"
-        class="flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 p-2 transition-colors duration-300 hover:bg-myGray-700"
+        class="dark:hover:text-black dark:text-black flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 p-2 transition-colors duration-300 hover:bg-myGray-700"
         @click="(isShowMenu = false), (isShowMore = false), (isShowMessager = !isShowMessager), (isShowNotice = false)"
       >
         <svg-messenger class="w-5" />
@@ -27,7 +36,7 @@
             (isShowNotice = !isShowNotice),
             AnimationEvent
         "
-        class="flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 p-2 transition-colors duration-300 hover:bg-myGray-700"
+        class="dark:hover:text-black dark:text-black flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 p-2 transition-colors duration-300 hover:bg-myGray-700"
       >
         <svg-notifications class="w-5" />
       </div>
@@ -35,7 +44,7 @@
       <div
         id="pp-info"
         @click="(isShowMore = !isShowMore), (isShowMenu = false), (isShowMessager = false), (isShowNotice = false)"
-        class="flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 transition-colors duration-300 hover:bg-myGray-700"
+        class="dark:hover:text-black dark:text-black flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 transition-colors duration-300 hover:bg-myGray-700"
       >
       <div id="pp" class="relative overflow-hidden rounded-full border" style="width: 34px; height: 34px;">
   <img :src="userCurrent && userCurrent.avatar ? userCurrent.avatar : avatar" alt="" style="width: 100%; height: 100%;" />
@@ -46,7 +55,7 @@
     <!--Menu-->
     <div v-if="isShowMenu == true">
       <div
-        class="absolute right-0 top-full box-border h-[80vh] border-spacing-0 rounded-xl border-2 border-solid bg-gray-100 shadow-2xl"
+        class="dark:hover:text-black dark:text-black absolute right-0 top-full box-border h-[80vh] border-spacing-0 rounded-xl border-2 border-solid bg-gray-100 shadow-2xl"
       >
         <div class="mx-2 flex justify-between bg-white">
           <h3 class="mx-2 my-2 text-xl font-bold">Menu</h3>
@@ -234,7 +243,7 @@
 
     <!--Mess-->
     <div v-if="isShowMessager == true">
-      <div class="absolute right-0 top-full box-border w-[350px] rounded-lg border-2 border-solid bg-white">
+      <div class="dark:hover:text-black dark:text-black absolute right-0 top-full box-border w-[350px] rounded-lg border-2 border-solid bg-white">
         <div class="mx-2 mt-2 flex justify-between">
           <h3 class="mx-2 text-xl font-bold">Đoạn chát</h3>
           <div class="flex">
@@ -344,7 +353,7 @@
     <!--Notice-->
     <div
       v-if="isShowNotice == true"
-      class="absolute right-0 top-full box-border h-[80vh] w-96 overflow-auto rounded-lg border-2 border-solid bg-white font-semibold shadow-2xl"
+      class="dark:hover:text-black dark:text-black absolute right-0 top-full box-border h-[80vh] w-96 overflow-auto rounded-lg border-2 border-solid bg-white font-semibold shadow-2xl"
     >
       <div class="m-2">
         <div class="z-50 my-2">
@@ -397,7 +406,7 @@
 
     <div
       v-if="isShowMore == true"
-      class="absolute right-0 top-full box-content w-96 rounded-xl border-2 border-solid bg-gray-50 shadow-xl"
+      class="absolute right-0 top-full box-content w-96 rounded-xl border-2 border-solid bg-gray-50 shadow-xl dark:hover:text-black dark:text-black"
     >
       <div class="m-2 box-border rounded-xl border-2 border-solid bg-white px-2 shadow-sm">
         <div class="mx-1 my-1 rounded-xl hover:bg-gray-100">
@@ -504,7 +513,9 @@ import {
   Users,
   Group,
   MonitorPlay,
-  Newspaper
+  Newspaper,
+  MoonStar,
+  CloudSun
 } from "lucide-vue-next"
 import svgMenu from "../svg/svgMenu.vue"
 import svgMessenger from "../svg/svgMessenger.vue"
@@ -513,11 +524,15 @@ import svgCreate from "../svg/svgCreate.vue"
 import "vue-toast-notification/dist/theme-sugar.css"
 import { clearLS, getProfileFromLS } from "@/utils/auth"
 import pathConstant from "@/views/client/constant/path.constant"
+import { useDarkMode } from "@/composables/useDarkMode";    
+
 export default {
+  setup() {
+    const { toggleDarkMode, isDarkMode } = useDarkMode();
+    return { toggleDarkMode, isDarkMode };
+  },  
   async created() {
     this.userCurrent = getProfileFromLS()
-    console.log(' this.userCurrent : ', this.userCurrent);
-    
   },
   components: {
     svgMenu,
@@ -543,7 +558,9 @@ export default {
     MonitorPlay,
     Newspaper,
     LogOut,
-    Repeat
+    Repeat,
+    MoonStar,
+    CloudSun 
   },
   data() {
     return {
