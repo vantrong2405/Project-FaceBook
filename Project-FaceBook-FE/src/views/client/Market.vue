@@ -1,6 +1,6 @@
 <template>
  <div>
-  <div class="fixed left-0 top-[55px] flex h-screen w-[22%] flex-col bg-white pl-[5px] pt-[5px] shadow-md">
+  <div class="fixed left-0 top-[55px] flex h-screen w-[22%] flex-col bg-white pl-[5px] pt-[5px] shadow-md dark:!bg-black dark:!text-white">
     <div id="left-bar-top" class="p-[10px]">
       <ul>
         <li class="flex items-center justify-between">
@@ -200,7 +200,7 @@
       </div>
     </div>
   </div>
-  <div class="float-right w-[calc(100%-22%)] bg-[#F0F2F5]">
+  <div class="float-right w-[calc(100%-22%)] bg-[#F0F2F5] dark:!bg-black dark:!text-white">
     <div class="ml-[20px] w-[98%] px-2">
       <div class="mt-[20px] flex justify-between pr-[25px]">
         <div class="text-xl font-bold">Lựa chọn hôm nay</div>
@@ -222,7 +222,7 @@
                 src="https://admin.cms.ueb.edu.vn//Uploads/image/News/Thumbnails/2022/1/Thumbnails03012022052442.quan-tri-dai-hoc.jpg"
                 alt=""
               />
-              <div class="p-3 bg-white">
+              <div class="p-3 bg-white dark:!bg-slate-600">
                 <div className="font-semibold text-lg">Tôn Hoa Sen</div>
                 <div className="text-sm">183 Nguyễn Văn Trỗi, Quận Phú Nhuận, HCM</div>
                 <div className="flex justify-between">

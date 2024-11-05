@@ -46,7 +46,6 @@ class Http {
         return response;
       },
       (error) => {
-        if (error?.response?.status !== HttpStatusCode.UnprocessableEntity) {
           let message = error.response?.data?.message || error.message
           if (error.response?.data?.errors) {
             const errorMessages = Object.values(error.response.data.errors)
@@ -54,9 +53,7 @@ class Http {
               .join(", ");
             message = errorMessages || message;
           }
-
           if (toast) toast.error(message, { position: "top-right" })
-        }
         return Promise.reject(error);
       }
     );

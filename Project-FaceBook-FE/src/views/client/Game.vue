@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-parsing-error -->
 <template>
 <div>
-  <div class="fixed left-0 top-[55px] flex h-screen w-[22%] flex-col bg-white pl-[5px] pt-[5px] shadow-md">
+  <div class="fixed left-0 top-[55px] flex h-screen w-[22%] flex-col bg-white pl-[5px] pt-[5px] shadow-md dark:!bg-black dark:!text-white">
     <div id="left-bar-top" class="p-[10px]">
       <ul>
         <li class="flex items-center justify-between">
@@ -206,8 +206,8 @@
       </div>
     </div>
   </div>
-  <div class="float-right w-[calc(100%-22%)] bg-[#F0F2F5]">
-    <div class="overflow-hidden bg-[#F0F2F5] px-8">
+  <div class="float-right w-[calc(100%-22%)] bg-[#F0F2F5] dark:!bg-black dark:!text-white">
+    <div class="overflow-hidden bg-[#F0F2F5] px-8 dark:!bg-black dark:!text-white">
       <p class="pt-[10px] text-[24px] font-bold">Đã chơi gần đây</p>
       <div id="animation-carousel">
         <div class="py-[16px]">

@@ -6,9 +6,8 @@
         class=" dark:hover:text-black dark:text-black flex cursor-pointer items-center justify-center rounded-full bg-myGray-900 p-2 text-lg transition-colors duration-300 hover:bg-myGray-700"
          @click="toggleDarkMode"
       >
-      <CloudSun class="hidden w-5 lg:block" v-if="!isDarkMode"/>
-        <MoonStar class="hidden w-5 lg:block"  v-if="isDarkMode" />
-        <svg-create class="block w-5 lg:hidden" />
+      <CloudSun class=" w-5" v-if="!isDarkMode"/>
+        <MoonStar class=" w-5"  v-if="isDarkMode" />
       </div>
       <div
         id="menu-box"
