@@ -112,12 +112,7 @@
             </div>
             <span class="text-tiny font-semibold">Gia đình</span>
           </li>
-          <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900">
-            <div class="rounded-full bg-[#D8DADF] p-1">
-              <Video class="rounded-full" />
-            </div>
-            <span class="text-tiny font-semibold">Giải trí</span>
-          </li>
+      
           <li class="flex w-full cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:bg-myGray-900">
             <div class="rounded-full bg-[#D8DADF] p-1">
               <Shovel class="rounded-full" />
